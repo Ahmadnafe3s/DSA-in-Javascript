@@ -56,13 +56,14 @@ class Linked_List {
         let current = this.head
         let previous = null
         let newSet = new Set()
+
         while (current) {
             if (newSet.has(current.value)) {
                 previous.next = current.next
                 this.length--
             } else {
                 newSet.add(current.value)
-                previous = current
+                previous = current  // will one step behind from current..
             }
 
             current = current.next
